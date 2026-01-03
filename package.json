@@ -1,0 +1,21 @@
+{
+  "name": "resto-jobs-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional recruitment services for restaurants and cafés, powered by Harigan Automation.",
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "start": "esbuild index.tsx --bundle --outfile=dist/index.js --servedir=dist --platform=browser --format=esm --define:process.env.API_KEY='\"local_dev_key\"'",
+    "build": "esbuild index.tsx --bundle --outfile=dist/index.js --minify --platform=browser --format=esm --define:process.env.API_KEY='\"$API_KEY\"'"
+  }
+}
